@@ -13,7 +13,7 @@ import java.io.*;
 public class LambdaHandler implements RequestStreamHandler {
   static {
     try {
-      initHandler(SpringBootApplication.class);
+      initHandler(SpringBootMongoDbApplication.class);
     } catch (Exception e) {
       e.printStackTrace();
     }
