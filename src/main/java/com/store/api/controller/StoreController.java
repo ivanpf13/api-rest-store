@@ -111,20 +111,6 @@ public class StoreController {
     }
   }
 
-  @GetMapping("/productos/published")
-  public ResponseEntity<List<Productos>> findByPublished(@RequestParam(required = false) String sku) {
-    try {
-      List<Productos> tutorials = storeRepository.findByPrecio(sku);
-
-      if (tutorials.isEmpty()) {
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-      }
-      return new ResponseEntity<>(tutorials, HttpStatus.OK);
-    } catch (Exception e) {
-      return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-    }
-  }
-
   @GetMapping("/unidades")
   public ResponseEntity<List<Unidades>> getUnidades() {
     try {
